@@ -1,0 +1,54 @@
+Recordeu que el control de laboratori 2 està previst per
+dimarts 29 de maig, a l'aula de laboratori on esteu matriculats.
+
+Teniu una còpia d'aquest document a /assig/grau-g/
+
+Abans de l'examen...
+* Recordeu portar DNI o passaport.
+* No es pot portar cap full escrit.
+* És important que sigueu a l'aula a l'hora de començament de l'examen.
+
+
+Durant l'examen...
+* Recordeu *apagar completament* el smartphone/smartwatch abans d'entrar a l'aula. Mòbil no apagat = suspens.
+* Deixeu el DNI o passaport damunt la taula.
+* No podeu consultar cap mena de material imprés, apunts, fulls, etc. Tampoc no estàn permeses calculadores, mòbils, tablets, portàtils i similars.
+* L'entorn que farem servir us deixarà consultar el vostre directori HOME. Podeu posar-hi el que volgueu, però vigileu tenir prou espai lliure al disc!
+* Per l'examen farem servir la mateixa imatge de linux que feu servir habitualment, però no podreu realitzar cap connexió a l'exterior, ni podreu fer servir dispositius USB. Només tindreu disponible una connexió al servidor de fitxers i una altra a la URL de lliurament d'exàmens.
+* El control de laboratori consta de diversos exercicis. El PDF de l'enunciat el podreu obtenir a l'adreça https://examens.fib.upc.es amb el vostre username i password del racó.
+* Podreu lliurar els vostres exercicis (shaders al control 1, shaders i plugins al control 2) a https://examens.fib.upc.es prément el botó de "lliurar pràctica".
+* Podeu fer el nombre de lliuraments que volgueu (però vigileu perquè
+només avaluarem el darrer lliurament).
+
+Condicions específiques pels shaders...
+* A l'hora de pujar els fitxers de la vostra solució, pujeu els fitxers per separat, o si voleu tots els fitxers en un únic fitxer .tar sense directoris.
+* Veureu que els enunciats espeficiquen com heu de nombrar els fitxers .vert, .geom i .frag, així com les variables uniform, si n'hi ha. Cal que seguiu aquestes normes *escrupulosament* perquè una part de la correcció és automàtica. Per exemple, us podem demanar que feu servir aquests noms, que haurieu de respectar (incloent-hi minúscules i majúscules):
+
+    uniform float freq = 5.0;
+    uniform sampler2D sampler;
+    animate.vert (nom del fitxer)
+    animate.frag (nom del fitxer)
+
+* Com podeu imaginar, els exercicis del control s'han de resoldre de forma estrictament individual.
+
+* La duració prevista de l'examen serà d'1 hora i 50 minuts.
+
+Problema amb qmake en entorn segur (només pel control 2)
+
+Quan es treballa al laboratori en "entorn segur", com ho feu durant els controls, hi ha un problema que afecta sols alguns usuaris, i que fa que la crida de sistema stat(".") falli en els subdirectoris de dades/linux. Com a conseqüència, si aquest problema us afecta, qualsevol execució de qmake (que fa servir aquesta crida) fallarà amb un missatge dient que no pot fer un stat de "."
+
+De moment, l'única solució és moure la feina a un directori que no estigui muntat per CIFS, com per exemple "~/".
+
+Podeu copiar un directori en què treballeu en la resolució d'un exercici, amb  tots els subdirectoris, amb la comanda
+
+  cp -a  path_al_directori_a_copiar   ~
+
+el que us col·locarà a "~" una còpia amb el mateix nom, dins la qual podeu fer la vostra solució, i un cop acabat l'examen, copiar-vos-la altre cop on correspongui.
+
+Avaluació
+* Per obtenir una nota superior a 0 en cada problema el codi lliurat ha de compilar i executar correctament.
+* A l'avaluació tindrem en compte tant la sortida com alguns aspectes del codi.
+* Els warnings es podran penalitzar.
+* Solucions rebuscades o innecesàriament complexes es penalitzen.
+* Barrejar sistemes de coordenades en una mateixa expressió és gairabé sempre un error i es penalitza severament.
+* Si lliureu els fitxers en un .tar, cal que no hi hagi directoris (altrement podríeu lliurar accidentalment diferents versions del mateix fitxer). 

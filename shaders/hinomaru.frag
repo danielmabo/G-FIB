@@ -1,0 +1,17 @@
+#version 330 core
+
+in vec2 vtexCoord;
+out vec4 fragColor;
+
+void main()
+{
+    vec4 colorRed = vec4(1., 0., 0., 1.);
+    vec4 colorWhite = vec4(1., 1., 1., 1.);
+    vec2 centerFrag = vec2(0.5, 0.5);
+    float r = 0.2;
+    float d = distance(vtexCoord.st, centerFrag); //distance(x,y)
+    if (d > r)
+        fragColor = colorWhite;
+    else
+        fragColor = colorRed;
+}
